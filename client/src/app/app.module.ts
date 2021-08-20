@@ -27,6 +27,8 @@ import { MemberEditComponent } from './members/member-edit/member-edit.component
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptors/loading.interceptor';
 import { NgModuleDecorator, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -43,7 +45,8 @@ import { NgModuleDecorator, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { NgModuleDecorator, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     FormsModule,
     SharedModule,
     NgxGalleryModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    FileUploadModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
